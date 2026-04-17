@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/style.css">
     <title>Back Onto The Ship!</title>
 </head>
-<body>
-    <h1>Back Onto The Ship!</h1>
 
-    <p>
-        "Freya!" you call out to her. "I'll go with you, we need to get as much as we can and figure out
-        if the ship is even inhabitable." Freya wordlessly flashes you a grin, and heads straight back
-        into the ship. The majority of the damage went to the barrack area, thankfully leaving the cargo
-        mostly unharmed.
-    </p>
+<body>
+    <section class="page-container">
+        <h1>Back Onto The Ship!</h1>
+
+        <p>
+            "Freya!" you call out to her. "I'll go with you, we need to get as much as we can and figure out
+            if the ship is even inhabitable." Freya wordlessly flashes you a grin, and heads straight back
+            into the ship. The majority of the damage went to the barrack area, thankfully leaving the cargo
+            mostly unharmed.
+        </p>
+
+        <p>
+            You step further into the cargo area, grabbing whatever she hands to you. Once your hands are
+            full, Freya instructs you to bring the stuff outside and put it down. She insists you go ahead
+            of her and that she'll be right behind you with her own handful.
+        </p>
+
+        <p>
+            Do you want to listen to her instructions and leave the ship? If so, do you want to help her
+            when you're done, or wait outside for her?
+        </p>
+
+        <section class="choice">
+            <form id="choiceForm">
+                <fieldset>
+                    <legend>You...</legend>
+                    <input type="radio" name="choice" id="help">
+                    <label for="help">Leave now and help Freya</label>
+                    <input type="radio" name="choice" id="wait">
+                    <label for="wait">Leave now and wait for Freya</label>
+                    <input type="radio" name="choice" id="stay">
+                    <label for="stay">Insist to stay</label>
+                </fieldset>
+                <input id="continue" type="submit" value="Continue">
+            </form>
+        </section>
+    </section>
+
+    <script>
+        const continueButton = document.getElementById("continue");
+        const helpChoice = document.getElementById("help");
+        const waitChoice = document.getElementById("wait");
+        const stayChoice = document.getElementById("stay");
+        let choiceForm = document.getElementById("choiceForm");
+
+        function validation() {
+            if (!helpChoice.checked && !waitChoice.checked && !stayChoice.checked) {
+                alert("Please make a selection!");
+            }
+        }
+
+        function checkSelection() {
+            if (helpChoice.checked) {
+                choiceForm.action = "goAndHelp.html";
+            } else if (waitChoice.checked) {
+                choiceForm.action = "goAndWait.html";
+            } else if (stayChoice.checked) {
+                choiceForm.action = "insistStay.html";
+            }
+        }
+
+        continueButton.addEventListener("click", () => {
+            validation();
+            checkSelection();
+        });
+    </script>
 </body>
+
 </html>
