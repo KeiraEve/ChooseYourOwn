@@ -1,3 +1,8 @@
+#continue {
+    display: block;
+    margin: auto;
+}
+
 .choice {
 
 }
@@ -5,6 +10,7 @@
 .page-container {
     margin-left: 20vw;
     margin-right: 20vw;
+    color: white;
 }
 
 body {
@@ -12,26 +18,7 @@ body {
     text-align: center;
 }
 
-p {
-    color: white;
-}
-
 fieldset {
-    color: white;
-}
-
-h1 {
-    color: white;
-}
-
-h2 {
-    color: white;
-}
-
-h3 {
-    color: white;
-}
-
-h4 {
-    color: white;
+    display: inline-block;
+    margin: 1vh 1vw
 }
