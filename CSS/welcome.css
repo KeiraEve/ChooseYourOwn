@@ -1,0 +1,17 @@
+body {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+        url(../Images/galaxy.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+}
+
+.page-container {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    border: solid 1px white;
+    border-radius: 35px;
+    padding: 1rem;
+}
